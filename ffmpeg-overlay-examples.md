@@ -71,7 +71,7 @@ ffmpeg -i input.gif -i logo.png -filter_complex "[0]scale=512:512:force_original
 For pad filter color=black@0 will be transparent.
 ==============================================================================
 
-// sobreposição de gif estilo marca d'agua
+// sobreposição de gif estilo marca d'agua    
 [❓] You have to generate the palette for the same visual content that you wish to encode to GIF.
 
 ffmpeg -v error -i image.gif -i watermark.gif -filter_complex  '[1:v]scale=80:30[wm];[0:v][wm]overlay=(main_w-overlay_w) - main_h/30:(main_h-overlay_h) - main_h/30, palettegen' palette.png -y;
@@ -332,6 +332,3 @@ ffmpeg -i out-video_no-audio.mp4 -filter_complex \
 [c3][c4]overlay=main_w*.375:main_h*.375[c4];\
 [c4]crop=720:720:375:375" \
 out-video-hue4.mp4 -y
-
-
-->
