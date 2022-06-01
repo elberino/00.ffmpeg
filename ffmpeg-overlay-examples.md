@@ -6,7 +6,7 @@ ffmpeg -y -i overlayed_mig19_j6_42%.mp4 -i output_mig19_j6_loopped_true.webm -fi
 "[1:v]setpts=PTS-STARTPTS+2/TB,[ovr];[0:v][ovr]overlay=enable=gte(t\,2):eof_action=pass,format=yuva420p[vid]" \
 -map "[vid]" -map 0:a? -c:v libx264 -crf 25 -c:a copy -movflags +faststart chinese-airforce_mig19-j6.mp4
 _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   
-Don't forget to add the / after t in gte(t,10) – Tina J Jan 4 '19 at 0:14
+Don't forget to add the \ after t in gte(t,2) – Tina J Jan 4 '19 at 0:14
 
 _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   
 
