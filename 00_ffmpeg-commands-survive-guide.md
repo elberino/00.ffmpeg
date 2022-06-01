@@ -187,4 +187,5 @@ ffmpeg -framerate 6 -start_number 183 -i DSC_%5d.JPG -vframes 30 -filter:v " \
  8813  2022-05-22 20:57:55 fps=12,scale=480:-1:flags=lanczos,crop=360:360,setsar=1,split[s0][s1]; \
  8814  2022-05-22 20:57:55 [s0]palettegen[p]; \
  8815  2022-05-22 20:57:55 [s1][p]paletteuse" ../just-pigeon-3-cropped.gif -y -hide_banner
-ref com odeveria ser: crop=ih:ih:20:10
+ 
+// ref crop crop=ih:ih:20:10
