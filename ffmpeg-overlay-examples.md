@@ -1,5 +1,4 @@
-##### MELHORES EXEMPLOS: OVERLAY #####
-<-
+##### BEST EXAMPLES: OVERLAY #####
 ==============================================================================
 
 // video merge 
