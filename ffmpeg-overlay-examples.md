@@ -69,6 +69,7 @@ ffmpeg -y -i "sonoplasta_250521_cpi-beat_520px.mkv" -i "vlcsnap_newsonoplasta.pn
 ffmpeg -i input.gif -i logo.png -filter_complex "[0]scale=512:512:force_original_aspect_ratio=decrease,pad=512:512:-1:-1:color=black@0[bg];[bg][1]overlay=format=auto,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" output.gif
 
 For pad filter color=black@0 will be transparent.
+
 ==============================================================================
 
 // sobreposição de gif estilo marca d'agua    
@@ -199,6 +200,7 @@ ffmpeg -f lavfi -i color=c=8d0d0d:s=640x360 -frames:v 1 bg.png
 ffmpeg -i .\transparent_%05d.png -i bg.png -vsync 0 -filter_complex "[1:v][0:v]overlay[out]" -map "[out]" combined_%05d.png
 
 ==============================================================================
+
 // overlay solid color over a video
 ffmpeg -y -i Lion_eating.mp4 -i bg.png -filter_complex \
 "[1]format=yuva444p,colorchannelmixer=aa=0.42,vibrance=intensity=1.35[in2];\
@@ -311,6 +313,7 @@ ffmpeg -i test.mov -filter_complex \
 "[0]split[v1][v2];\
 [v2]scale=iw/2:-1[v2];\
 [v1][v2]overlay=main_w/4:main_h/4" \
+
 ==============================================================================
 
 // aplicação de tecnica simples hue + scaling 
