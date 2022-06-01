@@ -159,15 +159,18 @@ ffmpeg -i "$1" -i "$2" \
 (substitute $1 with your actual video, $2 with your overlay, and $3 with the output file name)
 
 
-==============================================================================
-Vhs overlay
+==============================================================================   
+Vhs overlay   
 https://www.reddit.com/r/ffmpeg/comments/fo9b8t/vhs_overlay/
+
 ==============================================================================
 Overlay a static PNG
 ffmpeg -y -i video.mp4 -i overlay.png -filter_complex [0]overlay=x=0:y=0[out] -map [out] -map 0:a? test.mp4
+
 ==============================================================================
 How to add a PNG overlay on a video using FFmpeg
 https://www.bannerbear.com/blog/how-to-add-a-png-overlay-on-a-video-using-ffmpeg/
+
 ==============================================================================
 ffmpeg -y -i overlayed_mig19_j6_42%.mp4 \
 -i output_mig19_j6_mandarim.gif \
@@ -194,11 +197,13 @@ ffmpeg -f lavfi -i color=c=8d0d0d:s=640x360 -frames:v 1 bg.png
 
 
 ffmpeg -i .\transparent_%05d.png -i bg.png -vsync 0 -filter_complex "[1:v][0:v]overlay[out]" -map "[out]" combined_%05d.png
+
 ==============================================================================
 // overlay solid color over a video
 ffmpeg -y -i Lion_eating.mp4 -i bg.png -filter_complex \
 "[1]format=yuva444p,colorchannelmixer=aa=0.42,vibrance=intensity=1.35[in2];\
 [in2][0]scale2ref[in2][in1];[in1][in2]overlay" Lion_eating_42%.mp4
+
 ==============================================================================
 +++Overlay et burned subs via filter_complex+++
 ffmpeg -i input.mp4 \
